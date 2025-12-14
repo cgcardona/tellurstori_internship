@@ -1,2 +1,3 @@
-# tellurstori_internship
+# TellUrStori Internship
+
 Documentation for TellUrStori Interns
