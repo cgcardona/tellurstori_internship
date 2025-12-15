@@ -158,7 +158,37 @@ HTML forms a **tree**:
 `article` is the parent  
 `h2` and `p` are children
 
-⚠ Closing tags incorrectly breaks the tree.
+⚠ **Closing tags incorrectly breaks the tree.**
+
+What does this mean? You must close tags in the **correct order** — the last tag you open should be the first one you close. Think of it like stacking boxes: you close the top box before the bottom one.
+
+**Correct:**
+```html
+<article>
+  <h2>Title</h2>
+  <p>Text</p>
+</article>
+```
+
+**Wrong (closing in wrong order):**
+```html
+<article>
+  <h2>Title</article>  <!-- ❌ Can't close article before closing h2 -->
+  </h2>
+  <p>Text</p>
+```
+
+**Wrong (forgetting to close a tag):**
+```html
+<article>
+  <h2>Title</h2>  <!-- ❌ Missing closing </p> tag -->
+  <p>Text
+</article>
+```
+
+When tags are closed incorrectly, browsers try to fix it, but the page structure becomes unpredictable and may not display as intended.
+
+**Note:** When tags are closed correctly, your markup is considered **well-formed**. This is different from **semantic HTML** (covered next), which is about choosing the right elements for their meaning.
 
 ---
 
