@@ -402,6 +402,8 @@ When the browser loads HTML:
 - it converts it into a **live object tree** called the DOM
 - every element becomes a node
 
+![DOM Tree Visualization](assets/domVisualization.svg)
+
 The DOM is what:
 - JavaScript manipulates
 - automation tools inspect
@@ -413,10 +415,10 @@ Understanding the DOM = understanding UI frameworks.
 
 ### ▶ Try This: Live DOM Editing
 
-1. Inspect a webpage
-2. Find an `<h1>`
-3. Double‑click the text
-4. Change it
+1. Inspect a webpage.
+2. Find an `<h1>` or a `<p>`.
+3. Double‑click the text.
+4. Change it.
 
 You just modified the DOM in real time.
 
