@@ -411,6 +411,10 @@ The DOM is what:
 
 Understanding the DOM = understanding UI frameworks.
 
+<!-- Add a section about manipulating the ODM with javascript -->
+
+<!-- Add a section about manipulating the ODM with jQuery to show how much easier and cleaner the syntax can be -->
+
 ---
 
 ### ▶ Try This: Live DOM Editing
