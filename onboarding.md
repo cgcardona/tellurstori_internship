@@ -664,6 +664,125 @@ You just modified the DOM in real time.
 
 ---
 
+### ▶ Try This: Manipulate the DOM with JavaScript
+
+Let's practice DOM manipulation using the example homepage in this repository. The DOM visualization you saw earlier represents the structure of `index.html` — now you'll manipulate it with JavaScript!
+
+**Steps:**
+
+1. Open `index.html` in your browser (double-click the file or drag it into a browser window)
+2. Open the Developer Console:
+   - **Chrome/Edge**: Press `F12` or `Cmd+Option+I` (Mac) / `Ctrl+Shift+I` (Windows)
+   - **Firefox**: Press `F12` or `Cmd+Option+K` (Mac) / `Ctrl+Shift+K` (Windows)
+   - **Safari**: Enable Developer menu first, then `Cmd+Option+C`
+3. Paste these commands one at a time and watch what happens:
+
+**Finding Elements:**
+
+```javascript
+// Find the header
+document.querySelector('header');
+
+// Find the main heading
+document.querySelector('h1');
+
+// Find all paragraphs
+document.querySelectorAll('p');
+
+// Find the image
+document.querySelector('img');
+
+// Find the link
+document.querySelector('a');
+```
+
+**Modifying Content:**
+
+```javascript
+// Change the heading text
+document.querySelector('h1').textContent = 'Hello from JavaScript!';
+
+// Change a paragraph
+document.querySelector('main p').textContent = 'I just changed this with JavaScript!';
+
+// Change the image alt text
+document.querySelector('img').alt = 'Updated description';
+
+// Change the link text
+document.querySelector('a').textContent = 'Visit TellUrStori';
+```
+
+**Modifying Styles:**
+
+```javascript
+// Change the heading color
+document.querySelector('h1').style.color = 'blue';
+
+// Change the heading font size
+document.querySelector('h1').style.fontSize = '48px';
+
+// Add a border to the image
+document.querySelector('img').style.border = '5px solid red';
+
+// Change background color of the main element
+document.querySelector('main').style.backgroundColor = '#f0f0f0';
+```
+
+**Complex Selectors:**
+
+```javascript
+// Find the first list item in the unordered list
+document.querySelector('ul li');
+
+// Find the link inside a list item
+document.querySelector('ul li a');
+
+// Find the video element by ID
+document.querySelector('#video1');
+
+// Find the audio element
+document.querySelector('audio');
+```
+
+**Creating and Adding Elements:**
+
+```javascript
+// Create a new paragraph
+const newP = document.createElement('p');
+newP.textContent = 'This paragraph was created with JavaScript!';
+
+// Add it to the main element
+document.querySelector('main').appendChild(newP);
+
+// Create a new list item
+const newLi = document.createElement('li');
+newLi.textContent = 'A new hobby: Learning web development!';
+document.querySelector('ul').appendChild(newLi);
+```
+
+**Removing Elements:**
+
+```javascript
+// Remove the last list item from the ordered list
+const ol = document.querySelector('ol');
+const lastItem = ol.lastElementChild;
+lastItem.remove();
+```
+
+**Experiment:**
+
+Try combining operations:
+```javascript
+// Find and modify multiple things
+document.querySelector('h1').textContent = 'My Awesome Page';
+document.querySelector('h1').style.color = 'purple';
+document.querySelector('h1').style.textAlign = 'center';
+```
+
+Notice how the page updates **instantly** — you're modifying the live DOM tree that the browser uses to render the page!
+
+---
+
 ## Phase 2 — HTTP & APIs
 
 ### What Is HTTP?
