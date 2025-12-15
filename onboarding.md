@@ -670,10 +670,10 @@ Let's practice DOM manipulation using the example homepage in this repository. T
 
 **Steps:**
 
-1. Open `index.html` in your browser (double-click the file or drag it into a browser window)
+1. Open `index.html` in your browser (double-click the file or drag it into a browser window) or in Terminal run `open index.html`.
 2. Open the Developer Console:
-   - **Chrome/Edge**: Press `F12` or `Cmd+Option+I` (Mac) / `Ctrl+Shift+I` (Windows)
-   - **Firefox**: Press `F12` or `Cmd+Option+K` (Mac) / `Ctrl+Shift+K` (Windows)
+   - **Chrome/Edge**: `Cmd+Option+I` (Mac) / `Ctrl+Shift+I` (Windows)
+   - **Firefox**: `Cmd+Option+K` (Mac) / `Ctrl+Shift+K` (Windows)
    - **Safari**: Enable Developer menu first, then `Cmd+Option+C`
 3. Paste these commands one at a time and watch what happens:
 
@@ -804,10 +804,26 @@ HTTP is:
 
 | Method | Meaning |
 |------|--------|
-| GET | Fetch data |
-| POST | Create new data |
-| PUT | Update existing data |
-| DELETE | Remove data |
+| [`GET`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/GET) | Requests a representation of the specified resource. Should only retrieve data and should not contain a request body. |
+| [`HEAD`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/HEAD) | Asks for a response identical to a GET request, but without a response body. |
+| [`POST`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/POST) | Submits an entity to the specified resource, often causing a change in state or side effects on the server. |
+| [`PUT`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/PUT) | Replaces all current representations of the target resource with the request content. |
+| [`PATCH`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/PATCH) | Applies partial modifications to a resource. |
+| [`DELETE`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/DELETE) | Deletes the specified resource. |
+| [`CONNECT`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/CONNECT) | Establishes a tunnel to the server identified by the target resource. |
+| [`OPTIONS`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/OPTIONS) | Describes the communication options for the target resource. |
+| [`TRACE`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/TRACE) | Performs a message loop-back test along the path to the target resource. |
+
+**HTTP Verbs and CRUD Operations:**
+
+These HTTP methods map directly to database **CRUD** operations (Create, Read, Update, Delete), which is why REST APIs are so common on the web:
+
+- **POST** = **C**reate
+- **GET** = **R**ead
+- **PUT/PATCH** = **U**pdate
+- **DELETE** = **D**elete
+
+This mapping provides a consistent interface for interacting with data over the web. When you use a REST API, you're essentially performing database operations through HTTP requests.
 
 ---
 
@@ -817,13 +833,34 @@ Servers respond with status codes:
 
 | Code | Meaning |
 |----|--------|
-| 200 | Success |
-| 400 | Bad request |
-| 401 | Unauthorized |
-| 404 | Not found |
-| 500 | Server error |
+| [`200`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/200) | OK - Success |
+| [`201`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/201) | Created - Resource successfully created (common for POST) |
+| [`204`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/204) | No Content - Success with no response body (common for DELETE) |
+| [`301`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/301) | Moved Permanently - Permanent redirect |
+| [`302`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/302) | Found - Temporary redirect |
+| [`400`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/400) | Bad Request - Invalid request syntax |
+| [`401`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/401) | Unauthorized - Authentication required |
+| [`402`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402) | Payment Required - Reserved for future use |
+| [`403`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/403) | Forbidden - Authenticated but not authorized |
+| [`404`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404) | Not Found - Resource doesn't exist |
+| [`429`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/429) | Too Many Requests - Rate limit exceeded |
+| [`500`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/500) | Internal Server Error - Server-side error |
+| [`502`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/502) | Bad Gateway - Invalid response from upstream server |
+| [`503`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/503) | Service Unavailable - Server temporarily unavailable |
 
 Machines use these instead of words.
+
+**Note on 402 Payment Required:**
+
+The original web architects (including Tim Berners-Lee) included status code 402 "Payment Required" in the HTTP specification, anticipating that the web would need a way to handle micropayments and digital transactions. However, no standard payment system emerged at the time, so 402 was reserved for future use and never widely implemented.
+
+This void in native web payment infrastructure is exactly what cryptocurrencies and blockchain technologies later filled — providing the decentralized payment mechanism that the early web architects envisioned. The existence of 402 serves as a reminder that the web's creators were thinking about digital payments from the very beginning.
+
+During one of the HTML Working Group meetings, I had the honor of meeting Tim Berners-Lee, the inventor of the World Wide Web, and he was kind enough to hold Sol (grinding on a slice of pizza! 🍕😆) for a photo:
+
+![Meeting Tim Berners-Lee](assets/timbl_1.png)
+
+![Meeting Tim Berners-Lee](assets/timbl_2.png)
 
 ---
 
@@ -853,7 +890,7 @@ Why JSON?
 curl https://api.github.com
 ```
 
-You just made an HTTP GET request.
+You just made an HTTP `GET` request.
 
 ---
 
@@ -929,10 +966,15 @@ cd ~
 ## Phase 1 — Core Commands
 
 Commands:
-- `ls` — list
+- `pwd` — print working directory (shows where you are)
+- `ls` — list files and directories
 - `cd` — change directory
 - `mkdir` — make directory
-- `rm` — remove
+- `touch` — create empty file
+- `cat` — display file contents
+- `cp` — copy files or directories
+- `mv` — move or rename files
+- `rm` — remove files
 
 ⚠ `rm -rf` deletes permanently.
 
@@ -952,15 +994,67 @@ ls | grep txt
 
 ## Phase 3 — Git
 
-Git tracks history.
+**Git** is a version control system that tracks changes to your files over time. Think of it as a time machine for your code — you can see what changed, when it changed, and who changed it. Git allows you to:
+- **Track history** — Every change is recorded with a commit message
+- **Work collaboratively** — Multiple people can work on the same project
+- **Experiment safely** — Create branches to try new features without breaking the main code
+- **Revert mistakes** — Go back to any previous version if something goes wrong
 
-Basic flow:
+### Basic Git Workflow
+
+Let's walk through creating a repository and making your first commits:
+
+**1. Initialize a new repository:**
 ```bash
-git clone
-git add
-git commit
-git push
+git init
 ```
+This creates a new Git repository in your current directory. Git will start tracking changes to files in this folder.
+
+**2. Create and edit a README file:**
+```bash
+touch README.md
+echo "# My Project" > README.md
+echo "" >> README.md
+echo "This is my first project using Git." >> README.md
+```
+
+**3. Stage and commit your changes:**
+```bash
+git add README.md
+git commit -m "Add initial README"
+```
+- `git add` stages files (tells Git which files you want to include in the commit)
+- `git commit` creates a snapshot of your changes with a message describing what you did
+
+**4. Create a feature branch:**
+```bash
+git checkout -b feature/add-description
+```
+This creates a new branch called `feature/add-description` and switches to it. Branches let you work on features without affecting the main code.
+
+**5. Make changes and commit them:**
+```bash
+echo "" >> README.md
+echo "## About" >> README.md
+echo "This project demonstrates basic Git workflow." >> README.md
+git add README.md
+git commit -m "Add project description"
+```
+
+**6. Switch back to main and merge your changes:**
+```bash
+git checkout main
+git merge feature/add-description
+```
+- `git checkout main` switches you back to the main branch
+- `git merge` brings the changes from your feature branch into main
+
+**Common commands you'll use:**
+- `git status` — See what files have changed
+- `git log` — View commit history
+- `git diff` — See what changed in your files
+- `git clone <url>` — Copy an existing repository from GitHub or another remote
+- `git push` — Upload your commits to a remote repository (like GitHub)
 
 ---
 
