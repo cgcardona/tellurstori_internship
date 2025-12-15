@@ -136,7 +136,20 @@ Think of HTML as the *skeleton* of a page.
 - **Closing tags** add a forward slash before the tag name: `</tagname>`
 - Content goes **between** the opening and closing tags
 - Example: `<p>This is a paragraph.</p>` — the `<p>` opens, the text is the content, and `</p>` closes
-- Some tags are **self-closing** (like `<br>` or `<img>`) and don't need a separate closing tag
+- Some tags are **self-closing** (like [`<br>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br) or [`<img>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)) and don't need a separate closing tag
+  - [`<area>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area) - Image map area
+  - [`<base>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base) - Base URL
+  - [`<br>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br) - Line break
+  - [`<col>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/col) - Table column
+  - [`<embed>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed) - Embedded content
+  - [`<hr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr) - Thematic break (horizontal rule)
+  - [`<img>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) - Image
+  - [`<input>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) - Form input
+  - [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) - External resource link
+  - [`<meta>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta) - Metadata
+  - [`<source>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source) - Media source
+  - [`<track>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track) - Text track
+  - [`<wbr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr) - Line break opportunity
 
 Important ideas:
 - Tags open and close
