@@ -131,6 +131,13 @@ Think of HTML as the *skeleton* of a page.
 </html>
 ```
 
+**How tags work:**
+- **Opening tags** use angle brackets: `<tagname>`
+- **Closing tags** add a forward slash before the tag name: `</tagname>`
+- Content goes **between** the opening and closing tags
+- Example: `<p>This is a paragraph.</p>` — the `<p>` opens, the text is the content, and `</p>` closes
+- Some tags are **self-closing** (like `<br>` or `<img>`) and don't need a separate closing tag
+
 Important ideas:
 - Tags open and close
 - Indentation shows hierarchy
@@ -289,13 +296,52 @@ Why this matters:
 
 The HTML elements listed above didn't just appear out of nowhere — they were designed, debated, and refined by real people working together.
 
-During college, I (Carlos Gabriel Cardona) had the incredible opportunity to be a member of the W3C's HTML5 Working Group, sponsored by Google. For a year, I attended weekly calls, met with the team in San Jose and Silicon Valley, and contributed mockups that made it into the actual HTML specification. 
+During college, I (Carlos Gabriel Cardona) had the incredible opportunity to be a member of the W3C's HTML5 Working Group, sponsored by Google. For a year, I attended weekly calls, met with the team in San Jose and Silicon Valley, and contributed mockups that made it into the actual HTML specification.
 
 You can see my name listed among the acknowledged contributors in the official HTML specification:
 
 ![HTML Acknowledged Contributors](assets/HTML_acknowledged_contributors.jpg)
 
 This is a reminder that web standards are built by people — and your contributions matter too.
+
+---
+
+### ▶ Try This: Create Your First Homepage
+
+Create a simple HTML homepage that includes:
+
+**Required elements:**
+- `<main>` - Wrap your main content
+- `<p>` - Add paragraphs describing yourself
+- `<header>` - Include a header section
+- `<footer>` - Add a footer
+- `<ul>` - Create an unordered list (e.g., for hobbies)
+- `<ol>` - Create an ordered list (e.g., for favorite things)
+- `<a>` - Add at least one link
+
+**Content to include:**
+- Your name
+- Your age
+- Your location
+- Your hobbies
+- A picture of yourself
+
+**Bonus points for using:**
+- `<audio>` - Embed an audio file
+- `<video>` - Embed a video file
+
+After you've created your homepage, validate it using the [HTML Validator](https://validator.w3.org/) to make sure it's well-formed!
+
+---
+
+### Validating Your HTML and CSS
+
+Before moving on, it's important to ensure your markup and styles are well-formed and semantic. The W3C provides free validators to check your code:
+
+- [CSS Validator](https://jigsaw.w3.org/css-validator/) - Validates your CSS
+- [HTML Validator](https://validator.w3.org/) - Validates your HTML markup
+
+These tools help catch errors and ensure your code follows web standards.
 
 ---
 
