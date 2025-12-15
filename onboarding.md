@@ -1002,6 +1002,18 @@ ls | grep txt
 
 ### Basic Git Workflow
 
+Here's a visual overview of the workflow we'll walk through:
+
+```mermaid
+gitGraph
+    commit id: "Add initial README"
+    branch feature/add-description
+    checkout feature/add-description
+    commit id: "Add project description"
+    checkout main
+    merge feature/add-description
+```
+
 Let's walk through creating a repository and making your first commits:
 
 **1. Initialize a new repository:**
