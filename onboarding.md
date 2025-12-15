@@ -21,6 +21,23 @@ Whenever you see:
 
 ---
 
+## Table of Contents
+
+### [Roadmap A — Web Technology Fundamentals](#roadmap-a--web-technology-fundamentals)
+- [Phase 0 — Mental Models: How the Web Actually Works](#phase-0--mental-models-how-the-web-actually-works)
+- [Phase 1 — HTML & the DOM](#phase-1--html--the-dom)
+- [Phase 2 — HTTP & APIs](#phase-2--http--apis)
+- [Phase 3 — From Web to App Thinking](#phase-3--from-web-to-app-thinking)
+
+### [Roadmap B — Unix Terminal & Workflow](#roadmap-b--unix-terminal--workflow)
+- [Phase 0 — Terminal Orientation](#phase-0--terminal-orientation)
+- [Phase 1 — Core Commands](#phase-1--core-commands)
+- [Phase 2 — Pipes & Processes](#phase-2--pipes--processes)
+- [Phase 3 — Git](#phase-3--git)
+- [Phase 4 — AI‑Augmented Workflow](#phase-4--aiaugmented-workflow)
+
+---
+
 # Roadmap A — Web Technology Fundamentals
 
 ## Phase 0 — Mental Models: How the Web Actually Works
