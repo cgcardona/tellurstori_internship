@@ -140,6 +140,8 @@ Think of HTML as the *skeleton* of a page.
 - [`<div>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div)
 - [`<span>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span)
 
+**Note:** [`<div>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div) and [`<span>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span) are generic containers. Use them *only* when no semantic element fits. Prefer semantic elements whenever possible. This prevents the classic beginner trap of "everything is a div."
+
 **Occasional / Situational:**
 
 - [`<table>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
@@ -151,6 +153,8 @@ Think of HTML as the *skeleton* of a page.
 - [`<summary>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary)
 
 > There are many more elements. You do not memorize them. You look them up when needed.
+
+**Why semantic elements matter:** Semantic elements help screen readers, search engines, and future developers understand your page.
 
 ---
 
@@ -772,6 +776,46 @@ Servers respond with status codes:
 
 Machines use these instead of words.
 
+---
+
+### What Is HTTPS?
+
+**HTTPS** = **HTTP Secure**
+
+HTTPS is HTTP wrapped in encryption. When you see a lock icon 🔒 in your browser, that's HTTPS at work.
+
+**How it works:**
+
+1. **Encryption** — All data between your browser and the server is scrambled
+   - Anyone intercepting the connection sees gibberish
+   - Prevents eavesdropping on passwords, credit cards, private data
+
+2. **Authentication** — Verifies you're talking to the real server
+   - Uses digital certificates (like a server's ID card)
+   - Prevents imposters from pretending to be the real website
+
+3. **Integrity** — Ensures data isn't tampered with in transit
+   - If anyone modifies the data, the connection breaks
+   - What you send is what arrives
+
+**Why it matters:**
+
+- **HTTP** — Anyone on the network can read your data (like sending a postcard)
+- **HTTPS** — Data is encrypted end-to-end (like sending a sealed letter)
+
+Modern browsers warn you when a site uses plain HTTP. Most of the web now uses HTTPS by default.
+
+**In practice:**
+
+```
+http://example.com   ❌ Not secure, data visible
+https://example.com  ✅ Secure, data encrypted
+```
+
+When building apps or websites, **always use HTTPS** — especially for anything involving user data, authentication, or payments.
+
+---
+
 **Note on 402 Payment Required:**
 
 The original web architects (including Tim Berners-Lee) included status code 402 "Payment Required" in the HTTP specification, anticipating that the web would need a way to handle micropayments and digital transactions. However, no standard payment system emerged at the time, so 402 was reserved for future use and never widely implemented.
@@ -1017,4 +1061,3 @@ You graduate when you can:
 
 This document is meant to be *used*, not just read.
 Break things. Fix them. Learn.
-
