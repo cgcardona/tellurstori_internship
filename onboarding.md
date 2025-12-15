@@ -555,6 +555,104 @@ jQuery demonstrated that **good abstractions make complex APIs accessible**. By 
 
 ---
 
+### document.querySelector: jQuery's Influence on Native JavaScript
+
+Interestingly, jQuery's success directly influenced the web standards themselves. The native `document.querySelector` method (introduced in 2008) was **inspired by jQuery's CSS selector approach**. This is a perfect example of how a library can prove a concept valuable enough that it becomes a standard.
+
+**Why querySelector is Superior:**
+
+**1. One Method for All Selectors**
+
+**Old way** — different methods for different selectors:
+```javascript
+// Need to remember different methods
+const byId = document.getElementById('myId');
+const byClass = document.getElementsByClassName('myClass');
+const byTag = document.getElementsByTagName('p');
+```
+
+**With querySelector** — one method for everything:
+```javascript
+// Same method, just different selectors
+const byId = document.querySelector('#myId');
+const byClass = document.querySelector('.myClass');
+const byTag = document.querySelector('p');
+```
+
+**2. Full CSS Selector Support**
+
+You can use any CSS selector, including complex ones that weren't possible with the old methods:
+
+```javascript
+// Complex selectors that weren't possible before
+document.querySelector('div.container > p:first-child');
+document.querySelector('input[type="email"]');
+document.querySelector('.item:nth-child(3)');
+document.querySelector('header + main');
+document.querySelector('a[href^="https"]'); // Links starting with https
+```
+
+**3. Consistent Return Value**
+
+**Old way** — inconsistent return types:
+```javascript
+getElementById('id')           // Returns Element or null
+getElementsByClassName('class') // Returns HTMLCollection (array-like)
+getElementsByTagName('p')       // Returns HTMLCollection (array-like)
+```
+
+**With querySelector** — always returns a single Element or null:
+```javascript
+querySelector('#id')    // Returns Element or null
+querySelector('.class') // Returns Element or null (first match)
+querySelector('p')      // Returns Element or null (first match)
+```
+
+This makes code more predictable — you always get one element or null.
+
+**4. More Flexible Selection**
+
+```javascript
+// Find the first element matching any selector
+document.querySelector('div, p, .class, #id');
+
+// Find nested elements in one call
+document.querySelector('article header h1');
+
+// Use pseudo-selectors
+document.querySelector('li:last-child');
+document.querySelector('input:checked');
+```
+
+**5. Simpler Mental Model**
+
+Instead of remembering:
+- `getElementById` for IDs
+- `getElementsByClassName` for classes
+- `getElementsByTagName` for tags
+- Manual filtering for complex cases
+
+You just remember: `querySelector` + CSS selector.
+
+**The Pattern:**
+
+This demonstrates a common pattern in web development:
+1. **Library proves a concept** (jQuery with CSS selectors)
+2. **Community adopts it widely**
+3. **Standards bodies standardize it**
+4. **Browsers implement it natively**
+
+Other examples include:
+- `fetch()` API (inspired by libraries like Axios)
+- `Promise` (inspired by libraries like Q and Bluebird)
+- `Array.map()`, `Array.filter()` (inspired by functional programming libraries)
+
+**The Irony:**
+
+jQuery's success led to native APIs that reduced the need for jQuery. Modern JavaScript includes many features that jQuery pioneered, which is why jQuery usage has declined. But we should recognize that jQuery paved the way for these improvements.
+
+---
+
 ### ▶ Try This: Live DOM Editing
 
 1. Inspect a webpage.
