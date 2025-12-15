@@ -332,6 +332,12 @@ Create a simple HTML homepage that includes:
 
 After you've created your homepage, validate it using the [HTML Validator](https://validator.w3.org/) to make sure it's well-formed!
 
+**Example:** Here's a [complete example homepage](index.html) that demonstrates all the required elements. When you validate it, you should see a result like this:
+
+![Valid HTML Validation Result](assets/valid_html.png)
+
+This shows what success looks like — all green checkmarks mean your HTML is well-formed and follows web standards!
+
 ---
 
 ### Validating Your HTML and CSS
